@@ -1,0 +1,20 @@
+{
+  "name": "blockdevice",
+  "version": "0.0.0",
+  "description": "Block Device",
+  "main": "lib/blockdevice",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "block",
+    "device"
+  ],
+  "author": "Jonas Hermsmeier <jhermsmeier@gmail.com>",
+  "license": "MIT"
+}
