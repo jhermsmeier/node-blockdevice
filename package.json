@@ -1,6 +1,6 @@
 {
   "name": "blockdevice",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Block Device",
   "main": "lib/blockdevice",
   "directories": {
