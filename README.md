@@ -30,6 +30,10 @@ var device = new BlockDevice({
   blockSize: -1,
   // Device size in bytes (optional)
   size: -1,
+  // Heads per Track (for CHS addressing)
+  headsPerTrack: -1,
+  // Sectors per Track (for CHS addressing)
+  sectorsPerTrack: -1,
 })
 ```
 
