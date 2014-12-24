@@ -50,9 +50,9 @@ var device = new BlockDevice({
 - device.partition( options )
 - device.getLBA( cylinder, head, sector )
 - device.read( offset, length, buffer, callback( err, buffer, bytesRead ) )
-- device.readLBA( fromLBA, toLBA, buffer, callback( err, buffer, bytesRead ) )
+- device.readBlocks( fromLBA, toLBA, buffer, callback( err, buffer, bytesRead ) )
 - device.write( offset, buffer, callback( err, bytesWritten ) )
-- device.writeLBA( fromLBA, buffer, callback( err, bytesWritten ) )
+- device.writeBlocks( fromLBA, buffer, callback( err, bytesWritten ) )
 
 - BlockDevice.Partition( device, options )
 
@@ -61,5 +61,5 @@ var device = new BlockDevice({
 - get partition.size
 
 - partition.__OOB( lba )
-- partition.readBlock( from, to, buffer, callback )
-- partition.writeBlock( from, data, callback )
+- partition.readBlocks( from, to, buffer, callback )
+- partition.writeBlocks( from, data, callback )
