@@ -15,5 +15,17 @@
     "drive"
   ],
   "author": "Jonas Hermsmeier <jhermsmeier@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "directories": {
+    "example": "example",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jhermsmeier/node-blockdevice.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jhermsmeier/node-blockdevice/issues"
+  },
+  "homepage": "https://github.com/jhermsmeier/node-blockdevice"
 }
