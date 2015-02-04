@@ -10,56 +10,99 @@
 $ npm install blockdevice
 ```
 
-## Usage
+## Usage Examples
 
-```js
-var BlockDevice = require( 'blockdevice' )
-```
-
-```js
-var device = new BlockDevice({
-  // A custom 'fs' instance, defaults to require( 'fs' ) (optional)
-  fs: null,
-  // A file descriptor, if you have (optional)
-  fd: null,
-  // Path to the device
-  path: null,
-  // Mode defaults to 'rs+' to bypass local cache (optional)
-  mode: 'rs+',
-  // Device block size in bytes (optional)
-  blockSize: -1,
-  // Device size in bytes (optional)
-  size: -1,
-  // Heads per Track (for CHS addressing)
-  headsPerTrack: -1,
-  // Sectors per Track (for CHS addressing)
-  sectorsPerTrack: -1,
-})
-```
+- [example/mbr.js](https://github.com/jhermsmeier/node-blockdevice/blob/master/example/mbr.js): Reading the Master Boot Record of a device
 
 ## API
 
-- BlockDevice( options )
+### new BlockDevice( options )
+  - options: Object
+    - fs: require( 'fs' ), optional; custom 'fs' instance
+    - fd: Number, optional; file descriptor
+    - path: String, optional *if* `fd` is given
+    - mode: String, optional *if* `fd` is given
+    - blockSize: Number, optional
+    - size: Number, optional
+    - headsPerTrack: Number, optional
+    - sectorsPerTrack: Number, optional
 
-- BlockDevice.getPath( id )
+### BlockDevice.getPath( id )
+  - id: Number
 
-- device.open( callback( err, fd ) )
-- device.close( callback( err ) )
-- device.detectBlockSize( size, step, limit, callback( err, blockSize ) )
-- device.detectSize( step, callback( err, size ) )
-- device.partition( options )
-- device.getLBA( cylinder, head, sector )
-- device.read( offset, length, buffer, callback( err, buffer, bytesRead ) )
-- device.readBlocks( fromLBA, toLBA, buffer, callback( err, buffer, bytesRead ) )
-- device.write( offset, buffer, callback( err, bytesWritten ) )
-- device.writeBlocks( fromLBA, buffer, callback( err, bytesWritten ) )
+### device.open( callback )
+  - callback: function( err, fd )
 
-- BlockDevice.Partition( device, options )
+### device.close( callback )
+  - callback: function( err )
 
-- get partition.blockSize
-- get partition.sectors
-- get partition.size
+### device.detectBlockSize( size, step, limit, callback )
+  - size: Number, initial block size to be checked
+  - step: Number, block size increment
+  - limit: Number, maximum block size to be checked
+  - callback: function( err, blockSize )
 
-- partition.__OOB( lba )
-- partition.readBlocks( from, to, buffer, callback )
-- partition.writeBlocks( from, data, callback )
+### device.detectSize( step, callback )
+  - step: Number, size increment
+  - callback: function( err, size )
+
+### device.partition( options )
+  - options: Object
+    - firstLBA: Number, first logical block of partition
+    - lastLBA: Number, last logical block of partition
+
+### device.getLBA( cylinder, head, sector )
+  - cylinder: Number
+  - head: Number
+  - sector: Number
+
+### device.read( offset, length, buffer, callback )
+  - offset: Number
+  - length: Number
+  - buffer: Buffer, optional
+  - callback: function( err, buffer, bytesRead )
+  
+**INTERNAL**. Used by `.readBlocks()`.
+
+### device.readBlocks( fromLBA, toLBA, buffer, callback )
+ - fromLBA: Number
+ - fromLBA: Number
+ - buffer: Buffer, optional
+ - callback: function( err, buffer, bytesRead )
+
+### device.write( offset, buffer, callback )
+  - offset: Number
+  - buffer: Buffer
+  - callback: function( err, bytesWritten )
+  
+**INTERNAL**. Used by `.writeBlocks()`.
+
+### device.writeBlocks( fromLBA, buffer, callback )
+  - fromLBA: Number
+  - buffer: Buffer
+  - callback: function( err, bytesWritten )
+
+### new BlockDevice.Partition( device, options )
+  - options: Object
+    - firstLBA: Number, first logical block of partition
+    - lastLBA: Number, last logical block of partition
+
+### get partition.blockSize -> Number
+### get partition.sectors -> Number, number of blocks in partition
+### get partition.size -> Number, size in bytes
+
+### partition.__OOB( lba )
+  - lba: Number, logical block address
+  
+**INTERNAL**. Determines if a given LBA is out of bounds of the partition.
+
+### partition.readBlocks( from, to, buffer, callback )
+  - from: Number
+  - to: Number
+  - buffer: Buffer
+  - callback: function( err, buffer, bytesRead )
+
+### partition.writeBlocks( from, data, callback )
+  - from: Number
+  - data: Buffer
+  - callback: function( err, bytesWritten )
