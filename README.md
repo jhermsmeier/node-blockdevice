@@ -56,7 +56,7 @@ $ npm install blockdevice
   - head: Number
   - sector: Number
 
-### device.read( offset, length, buffer, callback )
+### device._read( offset, length, buffer, callback )
   - offset: Number
   - length: Number
   - buffer: Buffer, optional
@@ -70,7 +70,7 @@ $ npm install blockdevice
  - buffer: Buffer, optional
  - callback: function( err, buffer, bytesRead )
 
-### device.write( offset, buffer, callback )
+### device._write( offset, buffer, callback )
   - offset: Number
   - buffer: Buffer
   - callback: function( err, bytesWritten )
