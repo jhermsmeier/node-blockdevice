@@ -2,32 +2,34 @@
   "name": "blockdevice",
   "version": "0.5.2",
   "description": "Block Device",
-  "main": "lib/blockdevice",
+  "author": "Jonas Hermsmeier <jhermsmeier@gmail.com> (https://jhermsmeier.de)",
+  "license": "MIT",
+  "keywords": [
+    "fs",
+    "device",
+    "block",
+    "storage",
+    "drive",
+    "physical"
+  ],
+  "main": "lib/blockdevice.js",
   "dependencies": {},
   "devDependencies": {
     "mocha": "~2.5.3"
   },
-  "scripts": {
-    "test": "mocha"
-  },
-  "keywords": [
-    "block",
-    "physical",
-    "device",
-    "drive"
-  ],
-  "author": "Jonas Hermsmeier <jhermsmeier@gmail.com> (https://jhermsmeier.de)",
-  "license": "MIT",
-  "directories": {
-    "example": "example",
-    "test": "test"
-  },
+  "homepage": "https://github.com/jhermsmeier/node-blockdevice",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jhermsmeier/node-blockdevice.git"
+    "url": "git+https://github.com/jhermsmeier/node-blockdevice.git"
   },
   "bugs": {
     "url": "https://github.com/jhermsmeier/node-blockdevice/issues"
   },
-  "homepage": "https://github.com/jhermsmeier/node-blockdevice"
+  "scripts": {
+    "test": "mocha"
+  },
+  "directories": {
+    "example": "example",
+    "test": "test"
+  }
 }
