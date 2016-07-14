@@ -1,12 +1,13 @@
 # Block Device
-[![npm](https://img.shields.io/npm/v/blockdevice.svg?style=flat-square)](https://npmjs.com/blockdevice)
-[![npm downloads](https://img.shields.io/npm/dm/blockdevice.svg?style=flat-square)](https://npmjs.com/blockdevice)
+[![npm](https://img.shields.io/npm/v/blockdevice.svg?style=flat-square)](https://npmjs.com/package/blockdevice)
+[![npm license](https://img.shields.io/npm/l/blockdevice.svg?style=flat-square)](https://npmjs.com/package/blockdevice)
+[![npm downloads](https://img.shields.io/npm/dm/blockdevice.svg?style=flat-square)](https://npmjs.com/package/blockdevice)
 [![build status](https://img.shields.io/travis/jhermsmeier/node-blockdevice.svg?style=flat-square)](https://travis-ci.org/jhermsmeier/node-blockdevice)
 
 ## Install via [npm](https://npmjs.com)
 
 ```sh
-$ npm install blockdevice
+$ npm install --save blockdevice
 ```
 
 ## Usage Examples
@@ -60,7 +61,7 @@ $ npm install blockdevice
   - length: Number
   - buffer: Buffer, optional
   - callback: function( err, buffer, bytesRead )
-  
+
 **INTERNAL**. Used by `.readBlocks()`.
 
 ### device.readBlocks( fromLBA, toLBA, buffer, callback )
@@ -73,7 +74,7 @@ $ npm install blockdevice
   - offset: Number
   - buffer: Buffer
   - callback: function( err, bytesWritten )
-  
+
 **INTERNAL**. Used by `.writeBlocks()`.
 
 ### device.writeBlocks( fromLBA, buffer, callback )
@@ -92,7 +93,7 @@ $ npm install blockdevice
 
 ### partition.__OOB( lba )
   - lba: Number, logical block address
-  
+
 **INTERNAL**. Determines if a given LBA is out of bounds of the partition.
 
 ### partition.readBlocks( from, to, buffer, callback )
