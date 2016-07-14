@@ -1,11 +1,11 @@
 {
   "name": "blockdevice",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "description": "Block Device",
   "main": "lib/blockdevice",
   "dependencies": {},
   "devDependencies": {
-    "mocha": "~2.3.3"
+    "mocha": "~2.5.3"
   },
   "scripts": {
     "test": "mocha"
