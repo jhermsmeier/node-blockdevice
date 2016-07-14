@@ -21,6 +21,10 @@ describe( 'BlockDevice', function() {
       device.open( next )
     })
 
+    it( 'repeat device.open()', function( next ) {
+      device.open( next )
+    })
+
     it( 'device.readBlocks()', function( next ) {
       device.readBlocks( 0, 1, next )
     })
