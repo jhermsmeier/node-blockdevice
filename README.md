@@ -66,7 +66,7 @@ $ npm install --save blockdevice
 
 ### device.readBlocks( fromLBA, toLBA, buffer, callback )
  - fromLBA: Number
- - fromLBA: Number
+ - toLBA: Number
  - buffer: Buffer, optional
  - callback: function( err, buffer, bytesRead )
 
