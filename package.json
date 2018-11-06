@@ -13,6 +13,9 @@
     "physical"
   ],
   "main": "lib/blockdevice.js",
+  "scripts": {
+    "test": "mocha"
+  },
   "dependencies": {
     "debug": "^4.1.0"
   },
@@ -27,11 +30,7 @@
   "bugs": {
     "url": "https://github.com/jhermsmeier/node-blockdevice/issues"
   },
-  "scripts": {
-    "test": "mocha"
-  },
-  "directories": {
-    "example": "example",
-    "test": "test"
+  "engines": {
+    "node": ">=6.0.0"
   }
 }
