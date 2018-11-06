@@ -1,6 +1,6 @@
 {
   "name": "blockdevice",
-  "version": "0.6.1",
+  "version": "0.7.0",
   "description": "Block Device",
   "author": "Jonas Hermsmeier <jhermsmeier@gmail.com> (https://jhermsmeier.de)",
   "license": "MIT",
