@@ -37,7 +37,7 @@ describe( 'BlockDevice', function() {
 
   describe( 'new { fd }', function() {
 
-    var payload = new Buffer( 512 )
+    var payload = Buffer.alloc( 512 )
     payload.fill( 2 )
 
     it( 'constructor', function() {
